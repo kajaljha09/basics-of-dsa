@@ -18,5 +18,8 @@ int main(){
     d= new int[5]; //memory allocated in heap area ....This way is used in C++ programs
     cout<<d[4];  //this will give us a garbage value ....
 
+    free(d);  //deallocation in heap area .....C lang
+    delete []p; //deallocation in heap area ....C++ lang
+
     
 }
