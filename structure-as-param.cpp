@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <iostream>
 //call by value
 //actual parameter cannot be changed this way
+#include <stdio.h>
+#include <iostream>
 using namespace std;
 struct node {
     int a ;
