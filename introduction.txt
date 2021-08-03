@@ -1,0 +1,52 @@
+Data Structures :
+In computer Programming, Data structure is a way of organizing and storing data so as to ease the accessing and modification of data while program is executed . 
+There are various types of data structures present for storing the data and different data structures have different and unique features. 
+Some commonly used data structures are Array, Linked List, Stack, Queue, Heap, Binary Tree and Graph. 
+
+
+Database  :
+A Database is a collection of data that is stored in an organized fashion in a table containing rows and columns using a software package known as Database Management System (DBMS). 
+DBMS is used to modify, define, manipulate and manage data. Some examples of DBMS are : MySQL, Oracle Database and Microsoft Access. 
+
+
+Dataware house:
+Data Warehouse is basically the collection of data from various heterogeneous sources. It is the main component of the business intelligence system where analysis and 
+management of data are done which is further used to improve decision making. It involves the process of extraction, loading, and transformation for providing the data
+for analysis. Data warehouses are also used to perform queries on a large amount of data. It uses data from various relational databases and application log files.
+
+
+Big data :
+Big Data basically refers to the data which is in large volume and has complex data sets. This large amount of data can be structured, semi-structured, or non-structured 
+and cannot be processed by traditional data processing software and databases. Various operations like analysis, manipulation, changes, etc are performed on data and then 
+it is used by companies for intelligent decision making. Big data is a very powerful asset in today’s world. Big data can also be used to tackle business problems by 
+providing intelligent decision making.
+
+
+
+Types of Data Structures :
+1.Physical ->  1> Arrays
+               2> Linked List
+2.Logical ->   1> Stack    -      Linear
+               2> queues    -
+               3>  Trees            - Non-linear
+               4> Graph              -
+               5> hash table              - Tabular     
+These logical data structurea are implemented using Physical Data Structures
+
+
+Recursion: function calling itself
+There are two phases of recursion:
+1.Calling phase 
+2.Returning phase
+
+General syntax:
+int funcitonName(){
+                     if (n>0){         //there should be condition provided
+Ascending phase  :  *calling part ;   //before the funct call
+                     functionName();
+Descending phase:    *returning part;  //after the function call
+    } 
+
+}
+
+so now whats the difference between recursion and loop is that loops just has the ascending phase but recursion have both ascending and descending phase;
