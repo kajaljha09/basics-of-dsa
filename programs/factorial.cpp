@@ -8,6 +8,8 @@ int funct(int n){
 
    return n*funct(n-1);
     
+    
+
 }
 int main(){
     int x=2;

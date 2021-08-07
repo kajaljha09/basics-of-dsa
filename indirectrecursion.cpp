@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
-int funB(int n);
+//indirect recursion in which one function calls other and other function calls another and that calls again the first one  so as form a cycle
+int funB(int n);  //we need to declare the function before calling it otherwise it is going to throw some errors that the called function is out of range
 int funA(int n){
     if (n>0){
         cout<<n<<endl;
