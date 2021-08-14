@@ -121,13 +121,57 @@ int RbinarySearch(int A[],int l,int h, int key){
     }
     return -1;
 }
+//get function
+int Get(struct Array a,int index){
+    if(index>=0 && index<= a.length){
+        return a.A[index];
+    }    
+
+}
+int Set(struct Array * a,int index, int val){
+    if(index>=0 && index<=a->length){
+        a->A[index]=val;
+    }
+    display(a);
+};
+
+int Max(struct Array a){
+    int max = a.A[0];
+    for(int i=0;i<a.length;i++){
+        if(a.A[i]>max){
+            max=a.A[i];
+        }
 
 
+    }
+    return max;
+}
+int Sum(struct Array a){
+    int sum=0;
+    for(int i=0;i<a.length;i++){
+        sum=sum+a.A[i];
+    }
+    return sum;
+}
+//sum using recursion
+int Rsum(struct Array a,int n){
+   
+    if (n==0)return 0;
+    else{
+        return Rsum(a,n-1)+a.A[n-1];
+    }
+
+    
+}
 int main(){
     struct Array arr;
     int key;
+    int index;
+    int val,index2;
     cout<<"Enter size of the array";
     cin>>arr.size;
+    
+
     cout<<"Enter no of elements of array u are entering";
     cin>>arr.length;
     arr.A=new int[arr.size];
@@ -140,12 +184,24 @@ int main(){
     // insertAtAnyPos(&arr);
     // deleteAtAnyPos(&arr);
     // cout<<linearSearch(&arr);
-    cout<<binarySearch(arr)<<endl;
+    // cout<<binarySearch(arr)<<endl;
 
-    cout<<"Enter no. you want to search for using binary search (recursion)";
-    cin>>key;
-    cout<<RbinarySearch(arr.A,0,arr.length,key)<<endl;
-    display(&arr);
+    // cout<<"Enter no. you want to search for using binary search (recursion)";
+    // cin>>key;
+    // cout<<RbinarySearch(arr.A,0,arr.length,key)<<endl;
+    // display(&arr);
+    cout<<"Enter the index you want to search";
+    cin>>index;
+    cout<<Get(arr,index)<<endl<<endl;
+    cout<<"Enter the index which you want to update";
+    cin>>index2;
+    cout<<"Enter value you want to change";
+    cin>>val;
+    Set(&arr, index2,val);
+    cout<<Max(arr)<<endl;
+    cout<<Sum(arr)<<endl;
+    cout<<Rsum(arr,arr.length);
+
     delete []arr.A;
     return 0;
 
