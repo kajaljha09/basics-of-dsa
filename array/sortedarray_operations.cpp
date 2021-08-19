@@ -56,20 +56,20 @@ int Merge(int B[],int C[],int m,int l){
 
 }
 int main(){
-    // int n,l;
-    // cout<<"size of array";
-    // cin>>n;
-    // cout<<"no. of elements you want to enter";
-    // //user defined size of array
-    // int A[n]={};
-    // cin>>l;
+    int n,l;
+    cout<<"size of array";
+    cin>>n;
+    cout<<"no. of elements you want to enter";
+    //user defined size of array
+    int A[n]={};
+    cin>>l;
     
-    // cout<<"Enter you want to enter";
+    cout<<"Enter you want to enter";
 
-    // for(int i=0;i<l;i++){
-    //     cin>>A[i]; 
-    // }
-    // Merge(B,C);
+    for(int i=0;i<l;i++){
+        cin>>A[i]; 
+    }
+    Merge(B,C);
     int B[]={1,2,5,6};
     int C[]={3,4,8};
     int m=sizeof(B)/sizeof(B[0]);
@@ -77,8 +77,8 @@ int main(){
     Merge(B,C,m,k);
 
 
-    // cout<<IsSorted(A)<<endl;
-    // Insert(A,&l,n);
+    cout<<IsSorted(A)<<endl;
+    Insert(A,&l,n);
     
-    // display(A,&l);
+    display(A,&l);
 }

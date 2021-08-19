@@ -163,6 +163,7 @@ int Rsum(struct Array a,int n){
 
     
 }
+
 int main(){
     struct Array arr;
     int key;
