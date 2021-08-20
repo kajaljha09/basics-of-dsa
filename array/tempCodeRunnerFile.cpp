@@ -1,1 +1,1 @@
-    // Insert(A,&l,n);
+  // display(A,&l);
