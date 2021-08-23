@@ -30,6 +30,30 @@ void NoofDuplicate(int A[],int n){
     }
 
 }
+//finding duplicates using hashing table in Sorted Array
+void HashDuplicate(int A[],int n){
+    //find max of the array
+    int max=A[0];
+    for(int i=0;i<n;i++){
+        if(A[i]>max){
+            max=A[i];
+        }
+    }
+    cout<<"max"<<max<<endl;
+    int H[max+1]={};
+    for(int i=0;i<n;i++){
+        H[A[i]]++;
+        
+    }
+    for(int i=0;i<=max;i++){
+       
+        if(H[i]>1){
+            cout<<"Duplicate No is"<<i<<" and it is repeated "<<H[i]<<"times";
+
+        }
+
+    }
+}
 int main(){
     
     int A[]={2,3,4,5,5,5,6,9,9,9};
@@ -37,5 +61,6 @@ int main(){
     
     DisplayDuplicate(A,length);
     NoofDuplicate(A,length);
+    HashDuplicate(A,length);
     return 0;
 }
