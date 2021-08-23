@@ -1,1 +1,1 @@
- // void Delete(int index);
+ // cout<<MultipleMissing()
