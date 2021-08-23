@@ -1,1 +1,1 @@
- // cout<<MultipleMissing()
+ // cout<<NoofDuplicate();
