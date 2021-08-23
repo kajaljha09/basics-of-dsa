@@ -1,1 +1,1 @@
-  // display(A,&l);
+ // void Delete(int index);
