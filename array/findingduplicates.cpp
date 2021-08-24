@@ -15,6 +15,7 @@ void DisplayDuplicate(int A[],int n){
 
 }
 //to find the number of consecutive duplicates
+//time complexity is order of N O(N);
 void NoofDuplicate(int A[],int n){
     //j=i+1 approach
     int j=0;
@@ -22,7 +23,7 @@ void NoofDuplicate(int A[],int n){
         if(A[i]==A[i+1]){
             j=i+1;
             
-            while(A[i]==A[j])j++;
+            while(A[i]==A[j])j++; //this is not taking a separate time
             cout<<A[i]<<" is repeated "<<j-i<<" times"<<endl;
             i=j-1;
             
@@ -54,13 +55,39 @@ void HashDuplicate(int A[],int n){
 
     }
 }
+
+//finding duplicates in Unsorted Array
+void UnsorDupl(int A[],int n){
+    //using the index pointer approach
+    //and the elements found to be duplicates of any number equate it to -1
+    //then move towards other elements which are equal to -1
+    //here two loops will be used which is going to take order of N^2 time complexity
+    for(int i=0;i<n-1;i++){  //it should go upto second last element
+        int c=1;
+        if(A[i]!=-1){
+            for(int j=i+1; i<n; j++){  
+                if(A[i]==A[j]){
+                    c++;
+                    A[j]=-1;
+                }
+            }
+            if(c>1){
+                cout<<A[i]<<" is repeated "<<c<<" times";
+            }
+        }
+
+    }
+}
 int main(){
-    
+    //Sorted array
     int A[]={2,3,4,5,5,5,6,9,9,9};
     int length=sizeof(A)/sizeof(A[0]);
-    
-    DisplayDuplicate(A,length);
-    NoofDuplicate(A,length);
-    HashDuplicate(A,length);
+    //Unsorted array
+    int B[]={1,6,4,3,5,6,5,5,8,6,9,5};
+    int len=sizeof(B)/sizeof(B[0]);
+    // DisplayDuplicate(A,length);
+    // NoofDuplicate(A,length);
+    // HashDuplicate(A,length);
+    UnsorDupl(B,len);
     return 0;
 }
