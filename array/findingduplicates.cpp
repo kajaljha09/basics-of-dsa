@@ -65,7 +65,7 @@ void UnsorDupl(int A[],int n){
     for(int i=0;i<n-1;i++){  //it should go upto second last element
         int c=1;
         if(A[i]!=-1){
-            for(int j=i+1; i<n; j++){  
+            for(int j=i+1; j<n; j++){  
                 if(A[i]==A[j]){
                     c++;
                     A[j]=-1;
@@ -73,9 +73,25 @@ void UnsorDupl(int A[],int n){
             }
             if(c>1){
                 cout<<A[i]<<" is repeated "<<c<<" times";
+                cout<<endl;
             }
         }
 
+    }
+}
+int findingSum(int A[],int n,int k){
+    //it will follow the same algorithm
+    //as above
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n;j++){
+            if(A[i]+A[j]==k ){
+                cout<<"Elements which are equal to the sum are:"<<A[i]<<" and "<<A[j];
+                cout<<endl;
+                A[i]=-1;
+            }
+
+        }
+        
     }
 }
 int main(){
@@ -83,11 +99,19 @@ int main(){
     int A[]={2,3,4,5,5,5,6,9,9,9};
     int length=sizeof(A)/sizeof(A[0]);
     //Unsorted array
-    int B[]={1,6,4,3,5,6,5,5,8,6,9,5};
+    int B[]={1,6,4,3,5,6,5,5,8,6,9,5,9,0,9,9,7,3,2};
     int len=sizeof(B)/sizeof(B[0]);
     // DisplayDuplicate(A,length);
     // NoofDuplicate(A,length);
     // HashDuplicate(A,length);
+    
     UnsorDupl(B,len);
+    //finding sum
+    int C[]={2,4,6,5,7,3,9};
+    int l=sizeof(C)/sizeof(C[0]);
+    int k;
+    cout<<"Enter the value of K";
+    cin>>k;
+    findingSum(C,l,k);
     return 0;
 }
