@@ -94,24 +94,49 @@ int findingSum(int A[],int n,int k){
         
     }
 }
+//in sorted array, finding the pair of index whose sum is equal to the target
+void sum(int numbers[],int n,int target){
+     
+        int i=0,j=n-1;
+        while(i<j){
+            if(numbers[i]+numbers[j]==target){
+                cout<<i+1<<","<<j+1;
+                i++;
+                j--;
+            }
+            else if(numbers[i]+numbers[j]<target){
+            i++;
+            }
+            else{
+                j--;
+            }
+       
+}
+}
 int main(){
-    //Sorted array
+    // Sorted array
     int A[]={2,3,4,5,5,5,6,9,9,9};
     int length=sizeof(A)/sizeof(A[0]);
     //Unsorted array
     int B[]={1,6,4,3,5,6,5,5,8,6,9,5,9,0,9,9,7,3,2};
     int len=sizeof(B)/sizeof(B[0]);
-    // DisplayDuplicate(A,length);
-    // NoofDuplicate(A,length);
-    // HashDuplicate(A,length);
+    DisplayDuplicate(A,length);
+    NoofDuplicate(A,length);
+    HashDuplicate(A,length);
     
     UnsorDupl(B,len);
-    //finding sum
+//    finding sum 
     int C[]={2,4,6,5,7,3,9};
     int l=sizeof(C)/sizeof(C[0]);
     int k;
+
     cout<<"Enter the value of K";
     cin>>k;
     findingSum(C,l,k);
+    // sum
+    int D[]={2,9,20,11};
+    int n=sizeof(D)/sizeof(D[0]);
+    sum(D,n,11);
     return 0;
+
 }
