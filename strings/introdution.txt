@@ -1,0 +1,36 @@
+Introduction to Strings
+..............................................
+Char is used to store ASCII values and its range is from 0-127
+for A to Z :
+ASCII values are from 65 to 90
+for a to z :
+range is from 97 to 122
+..............................................
+Basically an array of characters is a string .
+It can be created using :
+.....
+char A[]={'A','B','/o'} #it is similar as creating an array where we may initialise with the size or we may not ,but the only difference is that 
+the elements can only be in the range 0-127 as alphabets or numbers like instead of A we can pass 65 but when we are passing alpha we should enclose it 
+into single quotes;
+while printing as string the output will be as "AB";
+.....
+or
+char A[]="AB";
+here we dont require any string terminator
+.....
+or using pointers and it will create the string in Heap Area
+char *n="kajal"
+so here n will be pointing to the string kajal created in heap area 
+
+...........................................
+But how we will know the length of the string ?
+So char array is ended by a "/o" 
+it is called String delimeter or end of string or string terminator or null character
+
+.............................................
+Talking about C 
+the specifiers used in C which are used in String problems are:
+%c : it is going to print or take input only the single char like 'A' or 'a' etc;
+%d : it is going to print the numberical value of a single character;
+%s : it is going to print the whole string ;
+.............................................

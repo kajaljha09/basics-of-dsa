@@ -13,7 +13,10 @@
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin\\gdb.exe",
-      "externalConsole": false
+      "externalConsole": false,
+      
+      "code-runner.runInTerminal": true
+     
     }
   ]
 }
