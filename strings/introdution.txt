@@ -1,15 +1,19 @@
-Introduction to Strings
+IN C : 
 ..............................................
 Char is used to store ASCII values and its range is from 0-127
 for A to Z :
 ASCII values are from 65 to 90
 for a to z :
 range is from 97 to 122
+
+****************
+here we could also consider the case that if we add 32 to 65 result is 97 that means by this way we could convert
+from lower to upper case and vice versa.
 ..............................................
 Basically an array of characters is a string .
 It can be created using :
 .....
-char A[]={'A','B','/o'} #it is similar as creating an array where we may initialise with the size or we may not ,but the only difference is that 
+char A[]={'A','B','\o'} #it is similar as creating an array where we may initialise with the size or we may not ,but the only difference is that 
 the elements can only be in the range 0-127 as alphabets or numbers like instead of A we can pass 65 but when we are passing alpha we should enclose it 
 into single quotes;
 while printing as string the output will be as "AB";
@@ -24,7 +28,7 @@ so here n will be pointing to the string kajal created in heap area
 
 ...........................................
 But how we will know the length of the string ?
-So char array is ended by a "/o" 
+So char array is ended by a "\o" 
 it is called String delimeter or end of string or string terminator or null character
 
 .............................................
@@ -34,3 +38,14 @@ the specifiers used in C which are used in String problems are:
 %d : it is going to print the numberical value of a single character;
 %s : it is going to print the whole string ;
 .............................................
+to take whole sentence as input in C we use :
+gets();s
+
+.....................................................
+...................................................
+
+IN C++ : Strings
+Here we need to include the string class  ie.#include<string>
+for declaring any string :
+string stringName ="Any string here"
+Here also we can traverse through each character similar to what we did in arrays using for or while loops
