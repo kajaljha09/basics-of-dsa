@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int reverse(string str ){
+int reverse(string str){
     int i,j;
     char t;
     for(i=0;str[i]!='\0';i++){}
@@ -8,7 +8,7 @@ int reverse(string str ){
     for(j=0;i>j;i--,j++){
         t=str[j];
         str[j]=str[i];
-        str[i]=t;
+        str[i]=t ;
     }
     cout<<str;
 }
