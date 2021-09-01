@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 //this also can be solved using two methods:
 //one is using index pointer method
@@ -20,13 +21,24 @@ int Duplicate(string str){
         if(c>1)cout<<str[i]<<"is repeated "<<c<<"times"<<endl;
     }
     return 0;
-
-
+}
+string HashDuplicate(string str){
+    
+    vector<int>H=vector<int>(26,0);
+    for(int i=0;str[i]!='\0';i++){
+        H[str[i]-97]++;
+    }
+    for(int i=0;i<26;i++){
+        if(H[i]>1){
+            printf("%c is repeated %d times \n",i+97,H[i]);
+        }
+    }
 
 
 }
 int main(){
     string str="perceptions";
     Duplicate(str);
+    cout<<HashDuplicate(str);
 
 }
