@@ -1,0 +1,6 @@
+Linked List is a collection of nodes.
+Nodes have data and a pointer to next node.
+In C we create Linked List using struct but in Cpp we can either create using Class or structure.
+The pointer to the Linked List is created inside stack area and the Linked List is created inside Heap Area dynamically
+In linked list , deletion and insertion of nodes is possible at runtime and is more flexible as there we just need to change the pointer to next node
+
