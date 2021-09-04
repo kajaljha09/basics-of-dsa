@@ -33,6 +33,7 @@ int Count(struct Node *p){
         c++;
         p=p->next;
     }
+    cout<<endl;
     cout<<c<<endl;
 
 }
@@ -55,6 +56,33 @@ int RSum(struct Node *p){
     else{
         return RSum(p->next)+p->data;
     }
+}
+//finding maximum in the linked List
+int Max(struct Node *p){
+    int m=INT_MIN;
+    while(p){
+        if(p->data > m){
+            m=p->data;
+        }else{
+            p=p->next;
+        }
+        
+    }
+    cout<<endl;
+    return m;
+}
+//finding max recursively
+int RMax(struct Node *p){
+    int x=0;
+    if(p==NULL){
+        return INT_MIN;
+    }
+
+        x=RMax(p->next);
+        if(x>p->data)return x;
+        else return p->data;
+
+
 }
 int create(){
     int i=0;
@@ -83,4 +111,6 @@ int main(){
     Count(first);
     Sum(first);
     cout<<RSum(first);
+    cout<<Max(first)<<endl;
+    cout<<RMax(first);
 }
