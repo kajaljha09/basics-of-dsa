@@ -84,6 +84,41 @@ int RMax(struct Node *p){
 
 
 }
+//for searching element in a Linked List
+struct Node * Search(struct Node *p,int key){
+    while(p!=NULL){
+        if(key==p->data)return p;
+        else{
+            p=p->next;
+        }
+    }
+    return NULL;
+
+}
+//for searching recursively
+struct Node * RSearch(struct Node *p,int key){
+    if(p==NULL)return NULL;
+    if(p->data==key)return p;
+    else return RSearch(p->next,key);
+}
+//but to reduce the time when we are searching for the same element next time we have two methods:
+//1.Transposition(swap the element with its previous one) but in linked list we dont prefer this one 
+//2.Move to first(swap the element with the first one )
+struct Node * Searching(struct Node *p,int key){
+    struct Node *q=NULL;
+    
+    while(p!=NULL){
+        
+    if(p->data==key){
+        cout<<p;
+        q->next=p->next;
+        p->next=first;
+        first =p;
+    }
+        q=p;
+        p=p->next;}
+}
+
 int create(){
     int i=0;
     int A[4]={3,2,4,6};
@@ -104,7 +139,7 @@ int create(){
 }
 
 int main(){
-    
+    struct Node *temp;
     create();
     Display(first);
     RDisplay(first);
@@ -112,5 +147,14 @@ int main(){
     Sum(first);
     cout<<RSum(first);
     cout<<Max(first)<<endl;
-    cout<<RMax(first);
+    cout<<RMax(first)<<endl;
+    temp=Search(first,3);
+    if(temp){
+        cout<<"Element found"<<temp->data<<endl;
+    }else{
+        cout<<"not found"<<endl;
+    }
+    cout<<RSearch(first,4)<<endl;
+    Searching(first,4);
+    Display(first);
 }
