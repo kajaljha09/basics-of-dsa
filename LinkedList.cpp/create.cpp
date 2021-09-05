@@ -118,6 +118,31 @@ struct Node * Searching(struct Node *p,int key){
         q=p;
         p=p->next;}
 }
+void Insertion(struct Node *p,int val,int pos){
+    //before every thing we have to check the condition for the validity of the position given
+    if(pos<0 || pos>Count(p)){
+        return ;
+    }
+    struct Node *t=(struct Node *)malloc(sizeof(struct Node));
+    int i;
+    if(pos==0){
+        t->data=val;
+        t->next=first;
+        first=t;
+    }
+    else if(pos>0){
+        for(i=0;i<pos-1 && p;i++){
+            p=p->next;
+        }if(p){
+           
+            t->data=val;
+            t->next=p->next;
+            p->next=t;
+        }
+
+    }
+
+}
 
 int create(){
     int i=0;
@@ -156,5 +181,9 @@ int main(){
     }
     cout<<RSearch(first,4)<<endl;
     Searching(first,4);
+    cout<<endl;
+    cout<<"Insertion is done here";
+    Insertion(first,4,4);
+    Insertion(first,6,0);
     Display(first);
 }
