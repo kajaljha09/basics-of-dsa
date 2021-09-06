@@ -63,9 +63,9 @@ int Max(struct Node *p){
     while(p){
         if(p->data > m){
             m=p->data;
-        }else{
-            p=p->next;
         }
+            p=p->next;
+        
         
     }
     cout<<endl;
@@ -171,7 +171,7 @@ int main(){
     Count(first);
     Sum(first);
     cout<<RSum(first);
-    cout<<Max(first)<<endl;
+    cout<<"maximum value present in the linked list is "<<Max(first)<<endl;
     cout<<RMax(first)<<endl;
     temp=Search(first,3);
     if(temp){

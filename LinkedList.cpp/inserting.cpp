@@ -64,7 +64,7 @@ int sortedInsertion(struct Node *p,int val){
     }
 }
 //Delete any node of Linked List
-int Delete(struct Node *p,int pos){
+void Delete(struct Node *p,int pos){
     int k,i;
     struct Node *q;
     if(pos==1){
@@ -74,7 +74,7 @@ int Delete(struct Node *p,int pos){
 
     }
     else{
-        for(i=0;i<pos-1;i++){
+        for(i=0;i<pos-1 && p;i++){
             q=p;
             p=p->next;
         }
@@ -83,11 +83,25 @@ int Delete(struct Node *p,int pos){
         delete p;
         cout<<"deleted node is having value "<<k<<endl;
 }
-    
-
-
 }
+int CheckSorted(struct Node *p){
+    int m=INT_MIN;
+    while(p){
+        if(p->data <m){
+            return false;
+        }
+        m=p->data;
+        p=p->next;
+    }
+    return true;
+
+    
+}  
+
+
+
 int main(){
+    int t=0;
     Insert(first,5);
     Insert(first,8);
     Insert(first,10);
@@ -98,8 +112,11 @@ int main(){
     sortedInsertion(first,4);
     sortedInsertion(first,18);
     Display(first);
-    Delete(first,1);
-    Delete(first,2);
+    Delete(first,1);  //for position 1
+    Delete(first,4);   //for any position
+    t=CheckSorted(first);
+    if(1)cout<<"Linked LIst is  sorted";
+    else cout<<"linked list is not sorted";
     Display(first);
     return 0;
 }
