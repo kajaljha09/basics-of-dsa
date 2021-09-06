@@ -63,6 +63,30 @@ int sortedInsertion(struct Node *p,int val){
    }
     }
 }
+//Delete any node of Linked List
+int Delete(struct Node *p,int pos){
+    int k,i;
+    struct Node *q;
+    if(pos==1){
+        k=p->data;
+        first=p->next;
+        delete p;
+
+    }
+    else{
+        for(i=0;i<pos-1;i++){
+            q=p;
+            p=p->next;
+        }
+        k=p->data;
+        q->next=p->next;
+        delete p;
+        cout<<"deleted node is having value "<<k<<endl;
+}
+    
+
+
+}
 int main(){
     Insert(first,5);
     Insert(first,8);
@@ -73,6 +97,9 @@ int main(){
     sortedInsertion(first,6);
     sortedInsertion(first,4);
     sortedInsertion(first,18);
+    Display(first);
+    Delete(first,1);
+    Delete(first,2);
     Display(first);
     return 0;
 }
