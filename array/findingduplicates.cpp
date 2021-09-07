@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-//this program is for finding the consecutive duplicates
+//this program is for finding the consecutive duplicates in Sorted array
 void DisplayDuplicate(int A[],int n){
     int lastDuplicate=0;
     for(int i=0;i<n;i++){
@@ -11,8 +11,6 @@ void DisplayDuplicate(int A[],int n){
                         
         }
     }
-
-
 }
 //to find the number of consecutive duplicates
 //time complexity is order of N O(N);
