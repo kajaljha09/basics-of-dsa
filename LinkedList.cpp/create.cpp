@@ -15,6 +15,7 @@ int Display(struct Node *p){
         p=p->next;
     }
     cout<<endl;
+    return 0;
 
 }
 
@@ -143,10 +144,28 @@ void Insertion(struct Node *p,int val,int pos){
     }
 
 }
+//duplicates values in a Sorted Linked List
+int duplicates(struct Node* p){
+    struct Node *q=first->next;
+    while(q!=NULL){
+        if(p->data != q->data){
+            p=q;
+            q=q->next;
+
+        }
+        else{
+            p->next=q->next;
+            delete q;
+            q=p->next;
+        }
+    }
+    return 0;
+    
+}
 
 int create(){
     int i=0;
-    int A[4]={3,2,4,6};
+    int A[7]={2,5,6,6,8,9,9};
     struct Node *t,*last;
     first=(struct Node *)malloc(sizeof(struct Node));
     first->data=A[0];
@@ -159,13 +178,15 @@ int create(){
         last->next=t;
         last=t;
     }
+    return 0;
    
     
 }
 
 int main(){
-    struct Node *temp;
+    // struct Node *temp;
     create();
+    struct Node * temp;
     Display(first);
     RDisplay(first);
     Count(first);
@@ -185,5 +206,8 @@ int main(){
     cout<<"Insertion is done here";
     Insertion(first,4,4);
     Insertion(first,6,0);
+    duplicates(first);
+    Display(first);
+    duplicates(first);
     Display(first);
 }
