@@ -1,21 +1,22 @@
 #include <iostream>
 #include<stdlib.h>
+#include<vector>
 using namespace std;
 struct Node{
     struct Node *next;
     int data;
     
 }*first;
-int Display(struct Node *p){
+void Display(struct Node *p){
     while(p!=NULL){
         cout<<p->data<<" ";
         p=p->next;
     }
     cout<<endl;
-
+    
 }
 
-int Insert(struct Node *p,int val){
+void Insert(struct Node *p,int val){
     struct Node *t,*last;
     
     t=(struct Node *)malloc(sizeof(struct Node));
@@ -37,7 +38,7 @@ int Insert(struct Node *p,int val){
 
 }
 //insertion in sorted linked list
-int sortedInsertion(struct Node *p,int val){
+void sortedInsertion(struct Node *p,int val){
     struct Node *q=NULL;
     struct Node *t;
     t=(struct Node *)malloc(sizeof(struct Node *));
@@ -97,6 +98,25 @@ int CheckSorted(struct Node *p){
 
     
 }  
+//Reverse a linked list
+void Reverse(struct Node *p){
+    vector<int>A;
+    int i=0;
+    p=first;
+    while(p!=NULL){
+        A.push_back(p->data);
+        p=p->next;
+        i++;   
+    }
+    p=first;
+    i--;  //because at the end of the loop i is out of the array
+    while(p!=NULL){
+        p->data=A[i];
+        p=p->next;
+        i--;
+    }
+  
+}
 
 
 
@@ -115,8 +135,11 @@ int main(){
     Delete(first,1);  //for position 1
     Delete(first,4);   //for any position
     t=CheckSorted(first);
-    if(1)cout<<"Linked LIst is  sorted";
+    if(t)cout<<"Linked LIst is  sorted";
     else cout<<"linked list is not sorted";
+    cout<<endl;
+    cout<<"THE REVERSED LINKED LIST IS  " ;
+    Reverse(first);
     Display(first);
     return 0;
 }
