@@ -1,3 +1,1 @@
-if(pos<0 || pos>Count(p)){
-    //     return ;
-    // }
+ Merge(first,second);
