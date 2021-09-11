@@ -207,10 +207,21 @@ void Merge(struct Node *f,struct Node*s){
    
     
 }
+int CheckLoop(struct Node *p){
+    struct Node *q;
+    p=q=first;
+    do{
+        p=p->next;
+        q=q->next;
+        q=q!=NULL ? q->next :NULL;
+
+    }while(p&&q && p!=q);
+    return p==q ? 1 : 0;
+}
 
 
 int main(){
-    int t=0;
+    int t=0,m=0;
   
     Insert(first,5);
     Insert(first,8);
@@ -244,5 +255,14 @@ int main(){
     cout<<"Merging of two linked lists ";
     Merge(first,second);
     Display(third);
+    // struct Node *t1,*t2;
+    // t1=first->next->next;                 //making loops in the linked list
+    // t2=first->next->next->next->next;
+    // t2->next=t1;
+    cout<<"Check if the linked list is having loops or not   :";
+    m=CheckLoop(first);
+    if(m){
+        cout<<"linked list have loops ";
+    }else{cout<<"no loops";}
     return 0;
 }
