@@ -19,12 +19,11 @@ int Create(struct Sparse *s){
     cin>>s->n;
     cout<<"Enter total number of non-zero elements";
     cin>>s->num;
-    cout<<"enter the elements";
     s->ele = new Element[s->num];
     for(int i=0;i<s->num;i++){
-        cout<<"row index element";
+        cout<<"row index ";
         cin>>s->ele[i].i;
-        cout<<"col index element";
+        cout<<"col index ";
         cin>>s->ele[i].j;
         cout<<"element";
         cin>>s->ele[i].e;
