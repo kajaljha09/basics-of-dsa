@@ -17,7 +17,7 @@ void Bubble(int A[],int n){
                 flag=1;
             }
         }
-        if(flag==0)break;  //if the array is already sorted then the outer loop should not be created
+        if(flag==0)break;  //if the array is already sorted then the outer loop should not b
     }
 }
 int main(){
